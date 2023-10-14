@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drum Kit</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+<div class="keys">
+
+    <div data-key="65" class="key">
+        <kbd>A</kbd>
+    </div>
+
+    <div data-key="83" class="key">
+        <kbd>S</kbd>
+    </div>
+
+    <div data-key="68" class="key">
+        <kbd>D</kbd>
+    </div>
+
+    <div data-key="70" class="key">
+        <kbd>F</kbd>
+    </div>
+
+    <div data-key="71" class="key">
+        <kbd>G</kbd>
+    </div>
+
+    <div data-key="72" class="key">
+        <kbd>H</kbd>
+    </div>
+
+    <div data-key="74" class="key">
+        <kbd>J</kbd>
+    </div>
+
+    <div data-key="75" class="key">
+        <kbd>K</kbd>
+    </div>
+
+    <div data-key="76" class="key">
+        <kbd>L</kbd>
+    </div>
+
+</div>
+
+
+<audio data-key="65" src="A.mp3"></audio>
+<audio data-key="83" src="S.mp3"></audio>
+<audio data-key="68" src="D.mp3"></audio>
+<audio data-key="70" src="F.mp3"></audio>
+<audio data-key="71" src="G.mp3"></audio>
+<audio data-key="72" src="H.mp3"></audio>
+<audio data-key="74" src="J.mp3"></audio>
+<audio data-key="75" src="K.mp3"></audio>
+<audio data-key="76" src="L.mp3"></audio>
+
+
+
+<script>
+
+function removeTransition(e) {
+    if (e.propertyName !== 'transform') return;
+    e.target.classList.remove('playing');
+  }
+
+  function playSound(e) {
+    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+    const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
+    if (!audio) return;
+
+    key.classList.add('playing');
+    audio.currentTime = 0;
+    audio.play();
+  }
+
+  const keys = Array.from(document.querySelectorAll('.key'));
+  keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+  window.addEventListener('keydown', playSound);
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,6 +1,11 @@
 # Drum-Kit
 ## A fantastic project on HTML,  CSS and  JAVASCRIPT about ```drum beat on clicking the keyboard keys.```
+Version 1.0 ->
 ### ![82gqea](https://github.com/harshita795/Drum-Kit/assets/73014908/b45e65ea-2be9-4e70-8539-91d42fcc2368)
+
+Updated Version 2.0 ->
+### ![ezgif com-video-to-gif](https://github.com/harshita795/Drum-Kit/assets/73014908/6a4dc47a-f2e6-4c5f-a569-8b826d1a67cf)
+ ```This features involves the functioning of playing the drum beats with the onclick on the screen button with the mouse key.```
 
 
 **Steps to get it on your local machine:--**

@@ -7,6 +7,9 @@ Updated Version 2.0 ->
 ### ![ezgif com-video-to-gif](https://github.com/harshita795/Drum-Kit/assets/73014908/6a4dc47a-f2e6-4c5f-a569-8b826d1a67cf)
  ```This features involves the functioning of playing the drum beats with the onclick on the screen button with the mouse key.```
 
+MP4 [https://github.com/harshita795/Drum-Kit/assets/73014908/21e4a8ce-6a59-460d-8390-7ad4e910b466]
+
+
 
 **Steps to get it on your local machine:--**
 

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drum Kit</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+<div class="keys">
+
+    <div data-key="65" class="key">
+        <kbd>A</kbd>
+        <button class="a poop">a</button>
+    </div>
+
+    <div data-key="83" class="key">
+        <kbd>S</kbd>
+        <button class="s poop">s</button>
+    </div>
+
+    <div data-key="68" class="key">
+        <kbd>D</kbd>
+        <button class="d poop">d</button>
+    </div>
+
+    <div data-key="70" class="key">
+        <kbd>F</kbd>
+        <button class="f poop">f</button>
+    </div>
+
+    <div data-key="71" class="key">
+        <kbd>G</kbd>
+        <button class="g poop">g</button>
+    </div>
+
+    <div data-key="72" class="key">
+        <kbd>H</kbd>
+        <button class="h poop">h</button>
+    </div>
+
+    <div data-key="74" class="key">
+        <kbd>J</kbd>
+        <button class="j poop">j</button>
+    </div>
+
+    <div data-key="75" class="key">
+        <kbd>K</kbd>
+        <button class="k poop">k</button>
+    </div>
+
+    <div data-key="76" class="key">
+        <kbd>L</kbd>
+        <button class="l poop">l</button>
+    </div>
+
+</div>
+
+
+<audio data-key="65" src="sounds/A.mp3" class="a poop"></audio>
+<audio data-key="83" src="sounds/S.mp3" class="s poop"></audio>
+<audio data-key="68" src="sounds/D.mp3" class="d poop"></audio>
+<audio data-key="70" src="sounds/F.mp3" class="f"></audio>
+<audio data-key="71" src="sounds/G.mp3" class="g"></audio>
+<audio data-key="72" src="sounds/H.mp3" class="h"></audio>
+<audio data-key="74" src="sounds/J.mp3" class="j"></audio>
+<audio data-key="75" src="sounds/K.mp3" class="k"></audio>
+<audio data-key="76" src="sounds/S.mp3" class="l"></audio>
+
+
+
+<script>
+
+      const buttons = Array.from(document.querySelectorAll('.key'));
+      buttons.forEach(button => button.addEventListener('transitionend', removeButtonTransition));
+
+      function removeButtonTransition(e) {
+      if (e.propertyName !== 'transform') return;
+      e.target.classList.remove('playing');
+       }
+
+
+
+
+
+
+      (function() {
+      const buttons = document.querySelectorAll('.poop')
+
+  
+
+      buttons.forEach(function(button) {
+         button.addEventListener('click', function(){
+               if(button.classList.contains('a')){
+               button.classList.add('playing');
+               const audi = document.querySelector('audio.a')
+               audi.currentTime = 0;
+               audi.play();
+                }
+
+               if(button.classList.contains('s')){
+            button.classList.add('playing');
+            const audi = document.querySelector('audio.s')
+            audi.currentTime = 0;
+            audi.play();
+         }
+
+         if(button.classList.contains('d')){
+            button.classList.add('playing');
+            const audi = document.querySelector('audio.d')
+            audi.currentTime = 0;
+            audi.play();
+         }
+
+         if(button.classList.contains('f')){
+            button.classList.add('playing');
+            const audi = document.querySelector('audio.f')
+            audi.currentTime = 0;
+            audi.play();
+         }
+
+         if(button.classList.contains('g')){
+            button.classList.add('playing');
+            const audi = document.querySelector('audio.g')
+            audi.currentTime = 0;
+            audi.play();
+         }
+
+         if(button.classList.contains('h')){
+            button.classList.add('playing');
+            const audi = document.querySelector('audio.h')
+            audi.currentTime = 0;
+            audi.play();
+         }
+
+         if(button.classList.contains('j')){
+            button.classList.add('playing');
+            const audi = document.querySelector('audio.j')
+            audi.currentTime = 0;
+            audi.play();
+         }
+
+         if(button.classList.contains('k')){
+            button.classList.add('playing');
+            const audi = document.querySelector('audio.k')
+            audi.currentTime = 0;
+            audi.play();
+         }
+
+         if(button.classList.contains('l')){
+            button.classList.add('playing');
+            const audi = document.querySelector('audio.l')
+            audi.currentTime = 0;
+            audi.play();
+         }
+         
+                 })
+          })
+                 })();
+
+
+
+ 
+function removeTransition(e) {
+    if (e.propertyName !== 'transform') return;
+    e.target.classList.remove('playing');
+  }
+
+
+
+
+  function playSound(e) {
+    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+    const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
+    if (!audio) return;
+
+    key.classList.add('playing');
+    audio.currentTime = 0;
+    audio.play();
+    
+  }
+
+
+  
+
+
+  const keys = Array.from(document.querySelectorAll('.key'));
+  keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+  window.addEventListener('keydown', playSound);
+
+   
+
+</script>
+
+
+</body>
+</html>
